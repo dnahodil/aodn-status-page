@@ -209,7 +209,13 @@ def repeat(closure, repeatTime) {
 
     while(true) {
 
-        closure()
+        try {
+            closure()
+        }
+        catch (Exception e) {
+            println "Execution failed"
+            e.printStackTrace()
+        }
 
         Thread.sleep 1000 * 60 * repeatTime
     }
