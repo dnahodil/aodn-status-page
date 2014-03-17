@@ -98,9 +98,7 @@ def getProcessedStatusInfo = {
             println " - $it"
         }
     }*/
-    
-    new File("$contentDir${File.separator}intermediateOutput.txt").write(servicesByHost.toString())
-    
+   
     """
     [
         {
