@@ -17,7 +17,7 @@ def repeatTime
 def parseArgs = {
 
     if (args.length < 3) {
-        println "Expected args: projectRootPath contentDestinationPath nagiosUrl [repeatTimeInMinutes]"
+        println "Expected args: projectRootPath contentDestinationPath nagiosUrl nagiosCredentials [repeatTimeInMinutes]"
         println "args were: $args"
         System.exit 1
     }
