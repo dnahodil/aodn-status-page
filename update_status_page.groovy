@@ -28,13 +28,13 @@ def parseArgs = {
     nagiosCredentials = args[3]  // <username>:<password> Base64 encoded
 
     if (args.length > 4)
-        repeatTime = Integer.parseInt(args[4])
+        repeatTime = Integer.parseInt(args[4]) // Interval of checks (in minutes)
 }
 
 def loadVariables = {
-    contentDir = "$projectRoot\\content\\"
-    templateLocation = "$projectRoot\\template.html"
-    templateOutputLocation = "$contentDir\\index.html"
+    contentDir = "$projectRoot${File.separator}content${File.separator}"
+    templateLocation = "$projectRoot${File.separator}template.html"
+    templateOutputLocation = "$contentDir${File.separator}index.html"
 }
 
 def configureSslToIgnoreCerts = {
@@ -98,9 +98,7 @@ def getProcessedStatusInfo = {
             println " - $it"
         }
     }*/
-    
-    new File(contentDir + "//intermediateOutput.txt").write(servicesByHost.toString())
-    
+   
     """
     [
         {
